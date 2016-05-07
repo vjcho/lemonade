@@ -13,6 +13,7 @@
     "express": "~4.13.1",
     "express-jwt": "^3.4.0",
     "jsonwebtoken": "^6.2.0",
+    "mongodb": "^2.1.18",
     "mongoose": "^4.4.15",
     "morgan": "~1.6.1",
     "passport": "^0.3.2",
