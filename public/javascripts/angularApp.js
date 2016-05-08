@@ -7,12 +7,6 @@ app.controller('MainCtrl', [
 	$scope.posts = posts.posts;
 	$scope.addPost = function(){
 		if(!$scope.title || $scope.title === '') {return;}
-		// $scope.posts.push({
-		// 	title: $scope.title,
-		// 	link: $scope.link,
-		// 	upvotes: 0,
-		// 	comments: [{author: 'Joe', body: 'asdlfk', upvotes: 0}]
-		// });
 
 		posts.create({
 			title: $scope.title,
@@ -28,6 +22,18 @@ app.controller('MainCtrl', [
 }])
 .controller('AuthCtrl', ['$scope','$state','auth', function($scope,$state,auth){
 	//$scope.test = 'Hello World';
+	$scope.triggers = {
+		'Drugs/Alcohol': false, 
+		'Physical Abuse':false, 
+		'Mental Abuse':false,
+		'Depression': false,
+		'Self Harm': false,
+		'Rape': false,
+		'Suicide':false,
+		'Sexual Harassment': false,
+		'Death': false
+	};
+	//$scope.colors = {Blue: true, Orange: true};
 	$scope.user = {};
 
 	$scope.register = function(){
@@ -57,6 +63,7 @@ app.controller('MainCtrl', [
 		$scope.isLoggedIn = auth.isLoggedIn;
 		$scope.currentUser = auth.currentUser;
 		$scope.logout = auth.logout;
+			
 	}]);
 
 
@@ -158,6 +165,14 @@ app.factory('posts', ['$http', 'auth', function($http, auth){
 			auth.saveToken(data.token);
 		});
 	};
+
+	auth.triggers = function(){
+		if(auth.isLoggedIn()){
+			var token = auth.getToken();
+			var payload = JSON.parse($window.atob(token.split('.')[1]));
+			return payload.triggers;
+		}
+	}
 
 	auth.logout = function(){
 		console.log("logout");

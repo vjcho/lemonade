@@ -59,6 +59,14 @@ section {
   border-radius: 10px;
 }
 
+.check{
+  display: block;
+}
+
+.check-block{
+  margin-left: 130px;
+}
+
 /*#register-form{
   width: 40%;
   left: 0;
