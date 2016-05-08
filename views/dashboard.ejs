@@ -14,21 +14,21 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
   </head>
+
   <style>
   p.test {
     width: 11em; 
     border: 1px solid #000000;
     word-wrap: break-word;
 }
-</style>
 
-  <style>
 section {
     width:200px;
     float:right;
     padding:10px; 
 }
   </style>
+
 
   <script type="type/ng-template" id="/home.html">
     <div class="page-header">
@@ -37,6 +37,7 @@ section {
   </script>
 
   <body ng-app="dashboard" ng-controller="MainCtrl">
+
     <img src="images/difflogoname.png" height="100">
 
     <nav class="navbar navbar-inverse">
@@ -58,6 +59,7 @@ section {
 
   </div>
     </nav>
+
 
   <div id="nav">
     Drugs/Alcohol<br>
@@ -86,15 +88,20 @@ section {
       border: 1px solid #000000;
       word-wrap: break-word;
   }
+  body{
+    background-image: url('../images/dashboardlemon.png');
+  }
     </style>
 
-      <input type="text" ng-model="title" style="margin-left: 200px; width:300px"></input>
+      <textarea ng-model="title" style="margin-left: 150px; width:600px; height:100px; rows:"3";"></textarea>
       <button type="submit" style="margin-left: 25px">Post</button>
       
     </form>
     <br>
-    <div ng-repeat="post in posts" style="margin-left: 255px; margin-right: 300px">
-      {{post.title}}
+    <div style="margin-left: 255px; margin-right: 240px;overflow-y:scroll; height: 250px; position:relative;">
+      <div ng-repeat="post in posts">
+        {{post.title}}
+      </div>
     </div>
 
   </body>

@@ -24,6 +24,7 @@ a {
     padding:5px; 
 }
 
+
 #nav2 {
     line-height:30px;
     height:300px;
@@ -36,6 +37,18 @@ a {
   margin-top:50px;
   /*background-color: pink;*/
   width: 40%;
+}
+
+p.test {
+    width: 11em; 
+    border: 1px solid #000000;
+    word-wrap: break-word;
+}
+
+section {
+    width:200px;
+    float:right;
+    padding:10px; 
 }
 
 /*#register-form{
