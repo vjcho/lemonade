@@ -15,21 +15,13 @@ a {
     margin: 0 auto;
 }
 
-<<<<<<< HEAD
-=======
 #nav {
     line-height:30px;
-    height:300px;
-    width:150px;
+    height:400px;
+    width:180px;
     float:left;
     padding:5px; 
+    border-radius: 25px;
 }
 
-#nav2 {
-    line-height:30px;
-    height:300px;
-    width:100px;
-    float:right;
-    padding:5px; 
-}
->>>>>>> e777ab8a0c94770166fc74d1a854777f3d93705c
+
