@@ -1,4 +1,4 @@
-var app = angular.module('flapperNews', ['ui.router']);
+var app = angular.module('dashboard', ['ui.router']);
 
 app.controller('MainCtrl', [
 	'$scope', 
@@ -16,17 +16,15 @@ app.controller('MainCtrl', [
 
 		posts.create({
 			title: $scope.title,
-			link: $scope.link
 		});
 
 		$scope.title = '';
-		$scope.link = '';
-		
+
 	};
 
-	$scope.incrementUpvotes = function(post){
+	/*$scope.incrementUpvotes = function(post){
 		posts.upvote(post);
-	};
+	};*/
 }])
 .controller('AuthCtrl', ['$scope','$state','auth', function($scope,$state,auth){
 	//$scope.test = 'Hello World';
@@ -83,35 +81,35 @@ app.factory('posts', ['$http', 'auth', function($http, auth){
   	});
   };
 
-  o.upvote = function(post){
+  /*o.upvote = function(post){
   	return $http.put('/posts/' + post._id + '/upvote', null, {
   		headers: {Authorization: 'Bearer '+auth.getToken()}
   	})
   		.success(function(data){
   			post.upvotes += 1;
   		})
-  }
+  }*/
 
   o.get = function(id){
   	return $http.get('/posts/' + id).then(function(res){
   		return res.data;
-  	})
+  	}); //added semi-colon 11:52PM
   };
 
   o.addComment = function(id, comment){
   	return $http.post('/posts/' + id + '/comments', comment, {
   		headers: {Authorization: 'Bearer '+auth.getToken()}
   	});
-  }
+  }; //added semi-colon 11:53PM
 
-  o.upvoteComment = function(post, comment) {
+  /*o.upvoteComment = function(post, comment) {
   return $http.put('/posts/' + post._id + '/comments/'+ comment._id + '/upvote', null, {
   	headers: {Authorization: 'Bearer '+auth.getToken()}
   })
     .success(function(data){
       comment.upvotes += 1;
     });
-};
+};*/
 
   return o;
 }])
@@ -223,8 +221,8 @@ function($stateProvider, $urlRouterProvider) {
 
 app.controller('PostsCtrl', [
 '$scope',
-'$stateParams',
 'posts',
+'post',
 function($scope, posts, post){
 	$scope.post = post;
 
@@ -245,8 +243,8 @@ function($scope, posts, post){
 	  $scope.body = '';
 	};
 
-	$scope.incrementUpvotes = function(comment){
+	/*$scope.incrementUpvotes = function(comment){
 	  posts.upvoteComment(post, comment);
-	};
+	};*/
 
 }]);
