@@ -16,10 +16,11 @@ app.controller('MainCtrl', [
 
 		posts.create({
 			title: $scope.title,
+			time: new Date().gettime(),
 		});
 
 		$scope.title = '';
-
+		$scope.time = '';
 	};
 
 	/*$scope.incrementUpvotes = function(post){
