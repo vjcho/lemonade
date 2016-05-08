@@ -84,7 +84,8 @@ app.factory('posts', ['$http', 'auth', function($http, auth){
   	return $http.post('/posts', post, {
   		headers: {Authorization: 'Bearer '+auth.getToken()}
   	}).success(function(data){
-  		o.posts.push(data);
+  		//o.posts.push(data);
+  		o.posts.unshift(data);
   	});
   };
 

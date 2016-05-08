@@ -3,6 +3,7 @@
     <title>Lemonade</title>
     <link rel="stylesheet" href="/stylesheets/bootstrap.css">
     <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
     <script src="/javascripts/angular.min.js"></script>
     <script src="/javascripts/angular-ui-router.js"></script>
     <script src="/javascripts/angularApp.js"></script>
@@ -17,12 +18,7 @@
       <li ng-hide="isLoggedIn()"><a href="/#/register">Register</a></li>
     </ul>
   </nav>
-   <!-- <div class="row"> -->
-    <!-- <div class="col-md-6 col-md-offset-3"> -->
-      <ui-view></ui-view>
-    <!-- </div> -->
-  <!-- </div> -->
-
+  <ui-view></ui-view>
 
 <script type="text/ng-template" id="/home.html">
   <img src="images/difflogoname.png" height="100">
@@ -89,40 +85,16 @@
     <div style="margin-left: 255px; margin-right: 240px;overflow-y:scroll; overflow-x:hidden; height: 250px; position:relative;">
       <div ng-repeat="post in posts">
         <div class="story">
-        {{post.title}}
-        </div>
-      </div>
-    </div>
-  <!-- <div class="row">
-    <div class="col-md-6 col-md-offset-3">
-
-      <div class="page-header">
-        <h1>Lemonade</h1>
-      </div>
-
-      <form ng-submit="addPost()"
-        style="margin-top:30px;">
-        <h3>Add a new post</h3>
-
-        <div class="form-group">
-          <input type="text"
-            class="form-control"
-            placeholder="Title"
-            ng-model="title"></input>
-        </div>
-        <button type="submit" class="btn btn-primary">Post</button>
-      </form>
-
-      <div ng-repeat="post in posts">
-        <span>
           {{post.title}}
-        </span>
-        <span>
-          <a href="#/posts/{{post._id}}">Comments</a>
-        </span>
+          <br></br>
+          <div>
+            <a href="#/posts/{{post._id}}">Comments</a>
+            <a href="" title="Report"><i class="fa fa-flag" aria-hidden="true"></i></a>
+          </div>
+
+        </div>
       </div>
     </div>
-  </div>
 </script>
 
 <script type="text/ng-template" id="/posts.html">
@@ -145,6 +117,7 @@
     <span style="font-size:20px; margin-left:10px;">
       {{comment.body}}
     </span>
+    <a href="" title="Report"><i class="fa fa-flag" aria-hidden="true"></i></a>
   </div>
 
 <form ng-submit="addComment()"
@@ -160,7 +133,7 @@
     <button type="submit" class="btn btn-primary">Post</button>
   </form>
 </div>
-</div> -->
+</div>
 
 </script>
 

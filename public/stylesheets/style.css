@@ -52,7 +52,7 @@ section {
 }
 
 .story{
-  height: 80px;
+  /*height: 80px;*/
   border: solid 1px gray;
   padding: 10px;
   margin: 15px;
