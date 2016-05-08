@@ -16,7 +16,7 @@ require('./models/Users');
 require('./config/passport');
 
 
-mongoose.connect('mongodb://localhost/db');
+mongoose.connect('mongodb://localhost/news');
 //var passport = require('passport');
 
 

@@ -1,5 +1,5 @@
 body {
-  padding: 50px;
+  /*padding: 50px;*/
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   /*background-image: url("http://www.organicfacts.net/wp-content/uploads/2013/05/Lemon3.jpg");*/
   background-image: url('../images/homebg.png');
@@ -32,3 +32,15 @@ a {
     padding:5px; 
 }
 
+#login-container{
+  margin-top:50px;
+  /*background-color: pink;*/
+  width: 40%;
+}
+
+/*#register-form{
+  width: 40%;
+  left: 0;
+  right: 0;
+  margin: auto;
+}*/

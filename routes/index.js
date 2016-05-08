@@ -15,7 +15,7 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.get('/dashboard', auth, function(req, res, next){
+router.get('/dashboard', function(req, res, next){
 	res.render('dashboard', {});
 });
 
@@ -105,8 +105,10 @@ router.post('/login', function(req, res, next){
 	}
 
 	passport.authenticate('local', function(err, user, info){
-		if(err)
+		if(err){
+			console.log("login error");
 			return next(err);
+		}
 		if(user){
 			return res.json({token: user.generateJWT()});
 		}
