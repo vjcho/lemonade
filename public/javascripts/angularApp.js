@@ -46,14 +46,14 @@ app.controller('MainCtrl', [
 		  });
 		$('#triggerbox').css('visibility', 'visible');
 	});
-	/*$(body).click(function(){ 
+	$('#saveform').click(function(){ 
 		$(this).animate({
 		     height: '50px'
 		   }, 400, function() {
 		     // Animation complete.
 		   });
 		$('#triggerbox').css('visibility', 'hidden');
-	 });*/
+	 });
 	 var selectedTags = [];
 
 	$scope.addPost = function(){
