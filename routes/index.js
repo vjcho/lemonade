@@ -29,6 +29,7 @@ router.get('/dashboard', function(req, res, next){
 
 router.get('/posts', function(req, res, next){
 	Post.find(function(err, posts){
+		console.log(req.body.tags);
 		if(err)
 			return next(err);
 

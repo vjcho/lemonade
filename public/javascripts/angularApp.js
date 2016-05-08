@@ -1,16 +1,28 @@
 var app = angular.module('dashboard', ['ui.router']);
 
 var tags = {
-		'Drugs/Alcohol': false, 
-		'Physical Abuse':false, 
-		'Mental Abuse':false,
-		'Depression': false,
-		'Self Harm': false,
-		'Rape': false,
-		'Suicide':false,
-		'Sexual Harassment': false,
-		'Death': false
+		'Drugs/Alcohol': {selected: false}, 
+		'Physical Abuse':{selected: false}, 
+		'Mental Abuse':{selected: false},
+		'Depression': {selected: false},
+		'Self Harm': {selected: false},
+		'Rape': {selected: false},
+		'Suicide':{selected: false},
+		'Sexual Harassment': {selected: false},
+		'Death': {selected: false}
 	};
+
+var tags2 = [{'name':'Drugs/Alcohol','selected':false},
+	{'name':'Physical Abuse','selected':false},
+	{'name':'Mental Abuse','selected':false},
+	{'name':'Depression','selected':false},
+	{'name':'Self Harm','selected':false},
+	{'name':'Rape','selected':false},
+	{'name':'Suicide','selected':false},
+	{'name':'Sexual Harassment','selected':false},
+	{'name':'Death','selected':false}
+];
+	
 
 app.controller('MainCtrl', [
 	'$scope', 
@@ -18,9 +30,10 @@ app.controller('MainCtrl', [
 	'auth',
 	function($scope, posts, auth){
 	$scope.posts = posts.posts;
-	$scope.triggers = tags;
+	$scope.triggers = tags2;
 
 	$scope.user = auth;
+	$scope.stags = [];
 
 	//console.log(auth.triggers);
 	//$scope.triggers = auth.triggers;
@@ -41,13 +54,21 @@ app.controller('MainCtrl', [
 		   });
 		$('#triggerbox').css('visibility', 'hidden');
 	 });*/
-
+	 var selectedTags = [];
 
 	$scope.addPost = function(){
 		if(!$scope.title || $scope.title === '') {return;}
 
+		angular.forEach($scope.triggers, function(t){
+			if(t.selected)
+				selectedTags.push(t);
+		});
+
+		console.log(selectedTags);
+
 		posts.create({
 			title: $scope.title,
+			tags: selectedTags
 			//time: new Date().getTime(),
 		});
 

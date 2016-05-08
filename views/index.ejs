@@ -58,7 +58,8 @@ section {
     </nav>
 
 
-  <div id="nav" style="border:2px solid gray; margin:20px 0 20px 20px ; padding: 10px; width: 210px">
+  <div id="nav" style="border:2px solid gray; margin:20px 0 20px 20px ; padding: 10px; width: 210px;">
+    <label style="padding-left: 40px">Tags to Block</label>
     <div class="radio">
       <label><input type="checkbox"> Drugs/Alcohol </label>
     </div>
@@ -121,8 +122,8 @@ section {
       <textarea ng-model="title" id="box" style="margin-left: 110px; width:600px; height:50px; rows:"3";"></textarea>
       <input type="image" id="saveform" src="images/post.png" width="100px" height="50px">
      <div id="triggerbox" style="visibility: hidden; width: 600px; margin-left: 340px;">
-      <label  ng-repeat="(t,enabled) in triggers">
-        <input type="checkbox" ng-model="post.triggers[t]"> {{t}} </label>
+      <label  ng-repeat="(t, enabled) in triggers">
+        <input type="checkbox" ng-model="t.selected"> {{t}} </label>
         <!-- <label><input type="checkbox"> Drugs/Alcohol </label>
         <label><input type="checkbox"> Physical Abuse </label>
         <label><input type="checkbox"> Mental Abuse </label>
@@ -159,25 +160,23 @@ section {
 </script>
 
 <script type="text/ng-template" id="/posts.html">
-<div class="row">
+<div class="row" style="background-image:url('/images/dashboardlemon.png');">
     <div class="col-md-6 col-md-offset-3">
 
   <div class="page-header">
-    <h3>
-      <span ng-hide="post.link">
-        {{post.title}}
-      </span>
+    <h3 class="post">
+     {{post.title}}
     </h3>
   </div>
 
-  <div ng-repeat="comment in post.comments">
-    
-    <span style="font-size:20px; margin-left:10px;">
+  <div ng-repeat="comment in post.comments" style="padding: 10px; border-bottom: 1px solid #EEEEEE">
+    <i class="fa fa-github-alt"></i> <span style="color: gray">{{comment.author}}</span>
+    <div style="font-size:20px; margin-top: 5px">
       {{comment.body}}
-
-    </span>
-    - by {{comment.author}}
-    <a href="" title="Report"><i class="fa fa-flag" aria-hidden="true"></i></a>
+      <a href="" title="Report" style="float:right;"><i class="fa fa-flag" aria-hidden="true"></i></a>
+    </div>
+    
+    
   </div>
 
 <form ng-submit="addComment()"

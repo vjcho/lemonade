@@ -68,6 +68,13 @@ section {
   margin-left: 130px;
 }
 
+.post{
+  margin-top: 100px;
+  /*border: solid 1px gray;*/
+  padding: 10px;
+  /*border-radius: 10px;*/
+}
+
 /*#register-form{
   width: 40%;
   left: 0;
