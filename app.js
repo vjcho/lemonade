@@ -8,7 +8,8 @@ var mongoose = require('mongoose');
 var passport = require('passport');
 
 mongoose.connect('mongodb://localhost/db');
-
+require('./models/Posts');
+require('./models/Comments');
 require('./models/Users');
 
 var passport = require('passport');
