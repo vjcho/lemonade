@@ -121,7 +121,7 @@ section {
     </style>
     <form ng-submit="addPost()">
       <textarea ng-model="title" style="margin-left: 150px; width:600px; height:100px; rows:"3";"></textarea>
-      <button type="submit" class="btn btn-primary" style="margin-left: 25px">Post</button>
+      <input type="image" id="saveform" src="images/post.png" width="100px" height="50px">
       
     </form>
     <br>
@@ -129,10 +129,11 @@ section {
       <div ng-repeat="post in posts">
         <div class="story">
           {{post.title}}
-          <br></br>
-          <div>
-            <a href="#/posts/{{post._id}}">Comments</a>
-            <a href="" title="Report"><i class="fa fa-flag" aria-hidden="true"></i></a>
+            {{post.time}}
+
+          <div style="font-family="Lucida Grande";">
+            <a href="#/posts/{{post._id}}"><img src = "../images/comment.png" title="Comment" height="15px" width="15px"> Comment </a>
+            <a href="" title="Report"><i class="fa fa-flag" aria-hidden="true" style="float:right; position:relative;"></i></a>
           </div>
 
         </div>
