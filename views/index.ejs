@@ -40,7 +40,7 @@ section {
 <script type="text/ng-template" id="/home.html">
   <img src="images/difflogoname.png" height="100">
 
-    <nav class="navbar navbar-inverse" ng-controller="NavCtrl" ng-show="isLoggedIn()">
+    <nav class="navbar navbar-inverse" ng-controller="NavCtrl">
   <!-- <div class="container-fluid"> -->
     <div class="navbar-header">
       <a class="navbar-brand" href="#">"I was served lemons, but I made lemonade." - Hattie White </a>
@@ -123,7 +123,7 @@ section {
       <input type="image" id="saveform" src="images/post.png" width="100px" height="50px">
      <div id="triggerbox" style="visibility: hidden; width: 600px; margin-left: 340px;">
       <label  ng-repeat="(t, enabled) in triggers">
-        <input type="checkbox" ng-model="t.selected"> {{t}} </label>
+        <input type="checkbox" ng-model="t"> {{t}} </label>
         <!-- <label><input type="checkbox"> Drugs/Alcohol </label>
         <label><input type="checkbox"> Physical Abuse </label>
         <label><input type="checkbox"> Mental Abuse </label>

@@ -30,7 +30,7 @@ app.controller('MainCtrl', [
 	'auth',
 	function($scope, posts, auth){
 	$scope.posts = posts.posts;
-	$scope.triggers = tags2;
+	$scope.triggers = tags;
 
 	$scope.user = auth;
 	$scope.stags = [];
