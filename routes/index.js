@@ -19,7 +19,13 @@ router.get('/dashboard', function(req, res, next){
 	res.render('dashboard', {});
 });
 
-
+// router.get('/user', function(req, res, next){
+// 	User.find({},function(err, data){
+// 		if(err)
+// 			return next(err);
+// 		res.json(data);
+// 	})
+// });
 
 router.get('/posts', function(req, res, next){
 	Post.find(function(err, posts){
