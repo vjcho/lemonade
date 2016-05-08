@@ -2,18 +2,20 @@
   <head>
     <title>My Angular App!</title>
     <link rel="stylesheet" href="/stylesheets/bootstrap.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.js"></script>
     <script src="/javascripts/angularApp.js"></script>
   </head>
   <body ng-app="flapperNews">
+
   <nav class="navbar navbar-default pull-right" ng-controller="NavCtrl">
-    <ul class="nav navbar-nav">
+   <!--  <ul class="nav navbar-nav">
       <li ng-show="isLoggedIn()"><a>{{ currentUser() }}</a></li>
       <li ng-show="isLoggedIn()"><a href="" ng-click="logout()">Log Out</a></li>
       <li ng-hide="isLoggedIn()"><a href="/#/login">Log In</a></li>
       <li ng-hide="isLoggedIn()"><a href="/#/register">Register</a></li>
-    </ul>
+    </ul> -->
   </nav>
    <div class="row">
     <div class="col-md-6 col-md-offset-3">
@@ -164,7 +166,7 @@
       <div class="col-sm-offset-2 col-sm-10">
         <button type="submit" class="btn btn-default">Log in</button>
         <p1 style="margin-left: 50px;"> or</p1>
-        <a class="btn btn-default" style="margin-left: 50px" href="/register">Register</a>
+        <a class="btn btn-default" style="margin-left: 50px" href="/#/register">Register</a>
       </div>
     </div>
   </form>

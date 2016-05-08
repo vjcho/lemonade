@@ -146,7 +146,7 @@ router.post('/register', function(req, res, next){
 
 
 router.get('/register', function(req,res,next){
-	res.render('register',{title:'Register'});
+	res.render('register', {title:'Register'});
 });
 
 module.exports = router;
