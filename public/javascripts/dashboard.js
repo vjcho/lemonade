@@ -64,10 +64,12 @@ app.controller('AuthCtrl', ['$scope','$state','auth', function($scope,$state,aut
 	};
 
 	$scope.login = function(){
-		console.log("login");
+		console.log("LOGIN");
 		auth.login($scope.user).error(function(error){
+			console.log("error");
 			$scope.error = error;
 		}).then(function(){
+			console.log("success login");
 			$state.go('dashboard');
 		});
 	};
