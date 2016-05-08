@@ -10,4 +10,8 @@ router.get('/dashboard', function(req, res, next){
 	res.render('dashboard', {});
 })
 
+router.get('/register', function(req,res,next){
+	res.render('register',{title:'Register'});
+});
+
 module.exports = router;
