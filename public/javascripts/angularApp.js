@@ -10,11 +10,10 @@ app.controller('MainCtrl', [
 
 		posts.create({
 			title: $scope.title,
-			time: new Date().getTime(),
+			//time: new Date().getTime(),
 		});
 
 		$scope.title = '';
-		$scope.time = '';
 	};
 
 	/*$scope.incrementUpvotes = function(post){
@@ -85,7 +84,6 @@ app.factory('posts', ['$http', 'auth', function($http, auth){
   	return $http.post('/posts', post, {
   		headers: {Authorization: 'Bearer '+auth.getToken()}
   	}).success(function(data){
-  		//o.posts.push(data);
   		o.posts.unshift(data);
   	});
   };
