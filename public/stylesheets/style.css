@@ -51,6 +51,14 @@ section {
     padding:10px; 
 }
 
+.story{
+  height: 80px;
+  border: solid 1px gray;
+  padding: 10px;
+  margin: 15px;
+  border-radius: 10px;
+}
+
 /*#register-form{
   width: 40%;
   left: 0;

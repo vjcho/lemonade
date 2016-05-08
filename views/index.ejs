@@ -85,9 +85,11 @@
       
     </form>
     <br>
-    <div style="margin-left: 255px; margin-right: 240px;overflow-y:scroll; height: 250px; position:relative;">
+    <div style="margin-left: 255px; margin-right: 240px;overflow-y:scroll; overflow-x:hidden; height: 250px; position:relative;">
       <div ng-repeat="post in posts">
+        <div class="story">
         {{post.title}}
+        </div>
       </div>
     </div>
   <!-- <div class="row">
