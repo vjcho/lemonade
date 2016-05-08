@@ -7,7 +7,7 @@ app.controller('MainCtrl', [
 	function($scope, posts, auth){
 	$scope.posts = posts.posts;
 
-	$scope.users = auth;
+	$scope.user = auth;
 
 	//console.log(auth.triggers);
 	//$scope.triggers = auth.triggers;
