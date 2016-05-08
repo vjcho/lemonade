@@ -16,6 +16,7 @@ app.controller('MainCtrl', [
 
 		posts.create({
 			title: $scope.title,
+			time: new Date().getTime(),
 		});
 
 		$scope.title = '';
