@@ -1,6 +1,9 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  /*background-image: url("http://www.organicfacts.net/wp-content/uploads/2013/05/Lemon3.jpg");*/
+  background-image: url('../images/homebg.png');
+  background-size:100%;
 }
 
 a {

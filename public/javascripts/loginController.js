@@ -1,4 +1,4 @@
-var app = angular.module('dashboard', ['ui.router']);
+/*var app = angular.module('dashboard', ['ui.router']);
 
 app.controller('AuthCtrl', ['$scope','$state','auth', function($scope,$state,auth){
 	$scope.test = 'Hello World';
@@ -59,7 +59,7 @@ app.factory('auth', ['$http', '$window', function($http, $window){
 
 	auth.login = function(user){
 		console.log("login");
-		return $http.post('/login', user).success(function(data){
+		return $http.post('/dashboard', user).success(function(data){
 			auth.saveToken(data.token);
 		});
 	};
@@ -98,3 +98,4 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
 	$urlRouterProvider.otherwise('dashboard');
 }]);
 
+*/
