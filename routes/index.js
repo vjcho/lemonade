@@ -19,6 +19,8 @@ router.get('/dashboard', function(req, res, next){
 	res.render('dashboard', {});
 });
 
+
+
 router.get('/posts', function(req, res, next){
 	Post.find(function(err, posts){
 		if(err)
@@ -120,18 +122,18 @@ router.post('/login', function(req, res, next){
 
 router.post('/register', function(req, res, next){
 	if(!req.body.username || !req.body.password){
-		console.log("12385");
+
 		return res.status(400).json({message: 'fill out all the forms'});
 	}
-	console.log("inside /register");
+
 	var user = new User();
-	console.log("before");
+
 	user.username = req.body.username;
-	console.log("after");
-	console.log(req.body.username);
-	//user.email = req.body.email;
-	console.log(req.body.username);
+
 	user.setPassword(req.body.password);
+
+	user.triggers = req.triggers;
+	console.log(req.body.triggers);
 
 	
 	user.save(function(err){

@@ -45,6 +45,7 @@
 
 
   <div id="nav">
+
     Drugs/Alcohol<br>
     Physical abuse<br>
     Mental abuse<br>
@@ -91,6 +92,10 @@
             <a href="#/posts/{{post._id}}">Comments</a>
             <a href="" title="Report" ><i class="fa fa-flag" aria-hidden="true"></i></a>
             {{post.time}}
+
+          <div style="font-family="Lucida Grande";">
+            <a href="#/posts/{{post._id}}"><img src = "../images/comment.png" title="Comment" height="15px" width="15px"> Comment </a>
+            <a href="" title="Report"><i class="fa fa-flag" aria-hidden="true" style="float:right; position:relative;"></i></a>
           </div>
 
         </div>
@@ -142,30 +147,119 @@
 	<div class="row">
 	<div class="col-md-6 col-md-offset-3">
   <div class="page-header">
-    <h1>Lemonade</h1>
+    <h2>Create your Lemonade Account </h2>
   </div>
 
   <div ng-show="error" class="alert alert-danger row">
     <span>{{ error.message }}</span>
   </div>
 
-  <form ng-submit="register()" id="register-form"
-    style="margin-top:30px;">
-    <h3>Register</h3>
+ <form class="form-horizontal" role="form" ng-submit="register()">
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="username">Username:</label>
+      <div class="col-sm-10">
+        <input type="username" class="form-control" id="username" placeholder="Enter user name"  ng-model="user.username">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="pwd">Password:</label>
+      <div class="col-sm-10">          
+        <input type="password" class="form-control" id="pwd" placeholder="Enter password" ng-model="user.password">
+      </div>
+    </div>
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <div class="checkbox">
+          <label><input type="checkbox"> I confirm that I am 13 and up</label required>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
 
-    <div class="form-group">
-      <input type="text"
-      class="form-control"
-      placeholder="Username"
-      ng-model="user.username"></input>
+  
+
+
+  <label for="tags" class="control-label col-sm-2">Triggers:</label>
+  <br><br>
+  <div class="check-block"> 
+    <label class="check" ng-repeat="(t,enabled) in triggers">
+        <input type="checkbox" ng-model="user.triggers[t]"> {{t}}
+    </label>
+  </div>
+
+
+
+    <!-- <label for="tags" class="control-label col-sm-2">Triggers:</label> 
+    <div class="col-sm-10">
+      <div class="col-sm-6">
+      <div class="col-sm-offset-2 col-sm-10">
+        <div class="radio">
+          <label><input type="checkbox">Drugs/Alcohol</label>
+
+        </div>
+      </div>
+          <div class="col-sm-offset-2 col-sm-10">
+        <div class="radio">
+          <label><input type="checkbox">Physical Abuse</label>
+
+        </div>
+      </div>
+      <div class="col-sm-offset-2 col-sm-10">
+        <div class="radio">
+          <label><input type="checkbox">Mental Abuse</label>
+
+        </div>
+      </div>
+      <div class="col-sm-offset-2 col-sm-10">
+        <div class="radio">
+          <label><input type="checkbox">Depression</label>
+
+        </div>
+      </div>
+      <div class="col-sm-offset-2 col-sm-10">
+        <div class="radio">
+          <label><input type="checkbox">Self Harm</label>
+
+        </div>
+      </div>
+      </div>
+      
+      <div class="col-sm-6">
+
+      <div class="col-sm-offset-2 col-sm-10">
+        <div class="radio">
+          <label><input type="checkbox">Rape</label>
+
+        </div>
+      </div>
+      <div class="col-sm-offset-2 col-sm-10">
+        <div class="radio">
+          <label><input type="checkbox">Suicide</label>
+
+        </div>
+      </div>
+      <div class="col-sm-offset-2 col-sm-10">
+        <div class="radio">
+          <label><input type="checkbox">Sexual harrassment</label>
+
+        </div>
+      </div>
+      <div class="col-sm-offset-2 col-sm-10">
+        <div class="radio">
+          <label><input type="checkbox">Death</label>
+
     </div>
-    <div class="form-group">
-      <input type="password"
-      class="form-control"
-      placeholder="Password"
-      ng-model="user.password"></input>
     </div>
-    <button type="submit" class="btn btn-primary">Register</button>
+     
+    </div>
+    </div> -->
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-default">Register</button>
+  
+      </div>
+    </div>
+
   </form>
   </div>
   </div>
@@ -178,13 +272,13 @@
   	<!-- <h1 style="text-align: center">Lemonade</h1> -->
   <form class="form-horizontal" role="form" ng-submit="login()">
     <div class="form-group">
-      <label class="control-label col-sm-2" for="username">Username:</label>
+      <label class="control-label col-sm-2" for="username"></label>
       <div class="col-sm-10">
         <input type="username" class="form-control" id="username" placeholder="Enter user name"  ng-model="user.username">
       </div>
     </div>
     <div class="form-group">
-      <label class="control-label col-sm-2" for="pwd">Password:</label>
+      <label class="control-label col-sm-2" for="pwd"></label>
       <div class="col-sm-10">          
         <input type="password" class="form-control" id="pwd" placeholder="Enter password" ng-model="user.password">
       </div>
