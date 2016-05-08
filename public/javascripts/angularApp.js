@@ -1,16 +1,47 @@
 var app = angular.module('dashboard', ['ui.router']);
 
+var tags = {
+		'Drugs/Alcohol': false, 
+		'Physical Abuse':false, 
+		'Mental Abuse':false,
+		'Depression': false,
+		'Self Harm': false,
+		'Rape': false,
+		'Suicide':false,
+		'Sexual Harassment': false,
+		'Death': false
+	};
+
 app.controller('MainCtrl', [
 	'$scope', 
 	'posts',
 	'auth',
 	function($scope, posts, auth){
 	$scope.posts = posts.posts;
+	$scope.triggers = tags;
 
 	$scope.user = auth;
 
 	//console.log(auth.triggers);
 	//$scope.triggers = auth.triggers;
+
+	$('#box').focus(function(){ 
+		$(this).animate({
+		    height: '80px'
+		  }, 400, function() {
+		    // Animation complete.
+		  });
+		$('#triggerbox').css('visibility', 'visible');
+	});
+	/*$(body).click(function(){ 
+		$(this).animate({
+		     height: '50px'
+		   }, 400, function() {
+		     // Animation complete.
+		   });
+		$('#triggerbox').css('visibility', 'hidden');
+	 });*/
+
 
 	$scope.addPost = function(){
 		if(!$scope.title || $scope.title === '') {return;}
@@ -23,23 +54,15 @@ app.controller('MainCtrl', [
 		$scope.title = '';
 	};
 
+
+
 	/*$scope.incrementUpvotes = function(post){
 		posts.upvote(post);
 	};*/
 }])
 .controller('AuthCtrl', ['$scope','$state','auth', function($scope,$state,auth){
 	//$scope.test = 'Hello World';
-	$scope.triggers = {
-		'Drugs/Alcohol': false, 
-		'Physical Abuse':false, 
-		'Mental Abuse':false,
-		'Depression': false,
-		'Self Harm': false,
-		'Rape': false,
-		'Suicide':false,
-		'Sexual Harassment': false,
-		'Death': false
-	};
+	$scope.triggers = tags;
 	//$scope.colors = {Blue: true, Orange: true};
 	$scope.user = {};
 
