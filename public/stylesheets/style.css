@@ -18,10 +18,11 @@ a {
 
 #nav {
     line-height:30px;
-    height:300px;
-    width:150px;
+    height:400px;
+    width:180px;
     float:left;
     padding:5px; 
+    border-radius: 25px;
 }
 
 

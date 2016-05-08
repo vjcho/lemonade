@@ -3,8 +3,15 @@ var app = angular.module('dashboard', ['ui.router']);
 app.controller('MainCtrl', [
 	'$scope', 
 	'posts',
-	function($scope, posts){
+	'auth',
+	function($scope, posts, auth){
 	$scope.posts = posts.posts;
+
+	$scope.users = auth;
+
+	//console.log(auth.triggers);
+	//$scope.triggers = auth.triggers;
+
 	$scope.addPost = function(){
 		if(!$scope.title || $scope.title === '') {return;}
 
@@ -62,6 +69,7 @@ app.controller('MainCtrl', [
 	function($scope, auth){
 		$scope.isLoggedIn = auth.isLoggedIn;
 		$scope.currentUser = auth.currentUser;
+		console.log(auth.currentUser);
 		$scope.logout = auth.logout;
 			
 	}]);
@@ -166,18 +174,19 @@ app.factory('posts', ['$http', 'auth', function($http, auth){
 		});
 	};
 
-	auth.triggers = function(){
-		if(auth.isLoggedIn()){
-			var token = auth.getToken();
-			var payload = JSON.parse($window.atob(token.split('.')[1]));
-			return payload.triggers;
-		}
-	}
+	// auth.triggers = function(){
+	// 	if(auth.isLoggedIn()){
+	// 		return $http.get('/user').success(function(res){
+	// 			console.log(res.data);
+ //  				return res.data;
+	// 	  	});
+	// 	}
+	// };
 
 	auth.logout = function(){
 		console.log("logout");
 		$window.localStorage.removeItem('user-token');
-	}
+	};
 
 
 	return auth;

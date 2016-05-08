@@ -22,10 +22,14 @@
     word-wrap: break-word;
 }
 
+  </style>
+
+<style>
 section {
     width:200px;
     float:right;
     padding:10px; 
+    border-radius: 25px;
 }
   </style>
 
@@ -48,7 +52,7 @@ section {
 
     <ul class="nav navbar-nav navbar-right">
       <li><a href="#"><span class="glyphicon glyphicon-home"></span> Home</a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-plus"></span> Add post</a></li>
+      <!-- <li><a href="#"><span class="glyphicon glyphicon-plus"></span> Add post</a></li> -->
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Me <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="#">My posts</a></li>
@@ -61,23 +65,52 @@ section {
     </nav>
 
 
-  <div id="nav">
-    Drugs/Alcohol<br>
-    Physical abuse<br>
-    Mental abuse<br>
-    Depression<br>
-    Self harm<br>
-    Rape<br>
-    Suicide<br>
-    Sexual Harassment<br>
-    Death
+  <div id="nav" style="border:3px solid #140202;">
+    <div class="radio">
+      <label><input type="checkbox"> Drugs/Alcohol </label>
+    </div>
+
+    <div class="radio">
+      <label><input type="checkbox"> Physical Abuse </label>
+    </div>
+
+    <div class="radio">
+      <label><input type="checkbox"> Mental Abuse </label>
+    </div>
+
+    <div class="radio">
+      <label><input type="checkbox"> Depression </label>
+    </div>
+
+    <div class="radio">
+      <label><input type="checkbox"> Self harm </label>
+    </div>
+
+    <div class="radio">
+      <label><input type="checkbox"> Rape </label>
+    </div>
+
+    <div class="radio">
+      <label><input type="checkbox"> Suicide </label>
+    </div>
+
+    <div class="radio">
+      <label><input type="checkbox"> Sexual Harassment </label>
+    </div>
+
+    <div class="radio">
+      <label><input type="checkbox"> Death </label>
+    </div>
+
 
   </div>
 
-  <section>
-        Hotline<br>
-        (530) 123-4567<br>
-        (408) 726-2379
+  <section style="border:3px solid #140202;">
+        <u><b> Hotline</b></u><br><br>
+        <b><i>24/7 Mental Health Consultation</i></b><br>
+        1 (530) 752-2349<br><br>
+        <b><i>National Suicide Prevention Lifeline</i></b><br>
+        1 (800) 273-8255<br><br>
   </section>
 
     <form ng-submit="addPost()">

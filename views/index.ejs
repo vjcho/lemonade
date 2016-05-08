@@ -9,7 +9,23 @@
     <script src="/javascripts/angularApp.js"></script>
   </head>
   <body ng-app="dashboard">
+<style>
+  p.test {
+    width: 11em; 
+    border: 1px solid #000000;
+    word-wrap: break-word;
+}
 
+  </style>
+
+<style>
+section {
+    width:200px;
+    float:right;
+    padding:10px; 
+    border-radius: 25px;
+}
+  </style>
   <nav class="navbar navbar-default pull-right" ng-controller="NavCtrl" ng-show="isLoggedIn()">
     <ul class="nav navbar-nav">
       <li ng-show="isLoggedIn()"><a>{{ currentUser() }}</a></li>
@@ -44,26 +60,53 @@
     </nav>
 
 
-  <div id="nav">
+  <div id="nav" style="border:3px solid #140202;">
+    <div class="radio">
+      <label><input type="checkbox"> Drugs/Alcohol </label>
+    </div>
 
-    Drugs/Alcohol<br>
-    Physical abuse<br>
-    Mental abuse<br>
-    Depression<br>
-    Self harm<br>
-    Rape<br>
-    Suicide<br>
-    Sexual Harassment<br>
-    Death
+    <div class="radio">
+      <label><input type="checkbox"> Physical Abuse </label>
+    </div>
+
+    <div class="radio">
+      <label><input type="checkbox"> Mental Abuse </label>
+    </div>
+
+    <div class="radio">
+      <label><input type="checkbox"> Depression </label>
+    </div>
+
+    <div class="radio">
+      <label><input type="checkbox"> Self harm </label>
+    </div>
+
+    <div class="radio">
+      <label><input type="checkbox"> Rape </label>
+    </div>
+
+    <div class="radio">
+      <label><input type="checkbox"> Suicide </label>
+    </div>
+
+    <div class="radio">
+      <label><input type="checkbox"> Sexual Harassment </label>
+    </div>
+
+    <div class="radio">
+      <label><input type="checkbox"> Death </label>
+    </div>
+
 
   </div>
 
-  <section>
-        Hotline<br>
-        (530) 123-4567<br>
-        (408) 726-2379
+ <section style="border:3px solid #140202;">
+        <u><b> Hotline</b></u><br><br>
+        <b><i>24/7 Mental Health Consultation</i></b><br>
+        1 (530) 752-2349<br><br>
+        <b><i>National Suicide Prevention Lifeline</i></b><br>
+        1 (800) 273-8255<br><br>
   </section>
-
     <form ng-submit="addPost()">
 
       <style>
@@ -78,7 +121,7 @@
     </style>
     <form ng-submit="addPost()">
       <textarea ng-model="title" style="margin-left: 150px; width:600px; height:100px; rows:"3";"></textarea>
-      <button type="submit" class="btn btn-primary" style="margin-left: 25px">Post</button>
+      <input type="image" id="saveform" src="images/post.png" width="100px" height="50px">
       
     </form>
     <br>
@@ -86,12 +129,12 @@
       <div ng-repeat="post in posts">
         <div class="story">
           {{post.title}}
+
           <!-- {{post.time}} -->
           <br></br>
           <div>
             <!-- <a href="#/posts/{{post._id}}">Comments</a> -->
             <!-- <a href="" title="Report" ><i class="fa fa-flag" aria-hidden="true"></i></a> -->
-            
 
           <div style="font-family="Lucida Grande";">
             <a href="#/posts/{{post._id}}"><img src = "../images/comment.png" title="Comment" height="15px" width="15px"> Comment </a>
@@ -109,9 +152,6 @@
 
   <div class="page-header">
     <h3>
-      <a ng-show="post.link" href="{{post.link}}">
-        {{post.title}}
-      </a>
       <span ng-hide="post.link">
         {{post.title}}
       </span>
@@ -119,16 +159,18 @@
   </div>
 
   <div ng-repeat="comment in post.comments">
-    - by {{comment.author}}
+    
     <span style="font-size:20px; margin-left:10px;">
       {{comment.body}}
+
     </span>
+    - by {{comment.author}}
     <a href="" title="Report"><i class="fa fa-flag" aria-hidden="true"></i></a>
   </div>
 
 <form ng-submit="addComment()"
     style="margin-top:30px;">
-    <h3>Add a new comment</h3>
+    <!-- <h3>Add a new comment</h3> -->
 
     <div class="form-group">
       <input type="text"
